@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -13,8 +14,11 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// This is admin controller
+Route::get('/users', [AdminController::class, 'users']);
+Route::get('/deleteUser/{id}', [AdminController::class, 'deleteUser']);
 
-
+// This is home controller
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/redirects', [HomeController::class, 'redirect']);
 

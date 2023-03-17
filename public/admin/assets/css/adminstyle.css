@@ -1,0 +1,17 @@
+.users_table_div{
+    position: relative;
+    top: 60px;
+    right: -150px;
+}
+.users_table_div .users_table{
+    background: gray;
+    border: 3px;
+}
+
+.users_table_div .users_table .users_th{
+    padding: 30px;
+}
+
+.users_table_div .users_table .users_data_tr{
+    text-align: center;
+}

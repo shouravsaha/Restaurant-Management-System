@@ -15,3 +15,13 @@
 .users_table_div .users_table .users_data_tr{
     text-align: center;
 }
+
+.food_menu_div{
+    position: relative;
+    top: 60px;
+    right: -60px;
+}
+.food_menu_div .food_menu_input{
+    color: blue;
+}
+

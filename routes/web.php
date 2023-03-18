@@ -17,6 +17,8 @@ use App\Http\Controllers\HomeController;
 // This is admin controller
 Route::get('/users', [AdminController::class, 'users']);
 Route::get('/deleteUser/{id}', [AdminController::class, 'deleteUser']);
+Route::get('/foodmenu', [AdminController::class, 'foodmenu']);
+Route::post('/upload_food', [AdminController::class, 'upload_food']);
 
 // This is home controller
 Route::get('/', [HomeController::class, 'index']);

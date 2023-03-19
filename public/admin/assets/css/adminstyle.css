@@ -24,4 +24,16 @@
 .food_menu_div .food_menu_input{
     color: blue;
 }
-
+.food_menu_table{
+    background: black;
+}
+.food_menu_table .food_menu_table_th{
+    padding: 30px;
+}
+.food_menu_table .food_menu_table_tr{
+    text-align: center;
+}
+.food_menu_img{
+    height: 200px;
+    width: 200px;
+}

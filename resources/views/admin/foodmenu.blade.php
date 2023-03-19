@@ -32,6 +32,26 @@
                     <input type="submit" class="btn btn-primary" value="Save">
                 </div>
             </form>
+            <div>
+                <table class="food_menu_table">
+                    <tr>
+                        <th class="food_menu_table_th">Food Name</th>
+                        <th class="food_menu_table_th">Price</th>
+                        <th class="food_menu_table_th">Description</th>
+                        <th class="food_menu_table_th">Image</th>
+                        <th class="food_menu_table_th">Action</th>
+                    </tr>
+                    @foreach ($food_menu_items as $data)
+                    <tr class="food_menu_table_tr">
+                        <td>{{ $data->title }}</td>
+                        <td>{{ $data->price }}</td>
+                        <td>{{ $data->description }}</td>
+                        <td><img class="food_menu_img" src="foodimage/{{ $data->image }}"></td>
+                        <td><a class="btn btn-danger" href="{{ url('/delete_food_menu', $data->id) }}">Delete</a></td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
         </div>
     </div>
         @include('admin.adminscript')

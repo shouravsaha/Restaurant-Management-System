@@ -8,19 +8,24 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    //
+    //this is all logged in users show in admin users section
     public function users(){
         $user_data = User::all();
         return view('admin.users', compact('user_data'));
     }
+    // this function indicate each user deleteing system and
+    // one users roll in admin this user not delete
     public function deleteUser($id){
         $user_data = User::find($id);
         $user_data->delete();
         return redirect()->back();
     }
+    // food items fatch in db and view all food in food menu file
     public function foodmenu(){
-        return view('admin.foodmenu');
+        $food_menu_items = Food::all();
+        return view('admin.foodmenu', compact('food_menu_items'));
     }
+    // all food items store in db
     public function upload_food(Request $request){
         $food_data_table = new food;
         $image = $request->image;
@@ -31,6 +36,12 @@ class AdminController extends Controller
         $food_data_table->price = $request->price;
         $food_data_table->description = $request->description;
         $food_data_table->save();
+        return redirect()->back();
+    }
+    // this function delete one by one food
+    public function delete_food_menu($id){
+        $delete_menu = Food::find($id);
+        $delete_menu->delete();
         return redirect()->back();
     }
 }

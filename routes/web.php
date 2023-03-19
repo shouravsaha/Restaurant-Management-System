@@ -22,11 +22,13 @@ Route::post('/upload_food', [AdminController::class, 'upload_food']);
 Route::get('/edit_food_menu/{id}', [AdminController::class, 'edit_food_menu']);
 Route::post('/update_food/{id}', [AdminController::class, 'update_food']);
 Route::get('/delete_food_menu/{id}', [AdminController::class, 'delete_food_menu']);
-
+Route::post('/reservation', [AdminController::class, 'reservation']);
+Route::get('/viewreservation', [AdminController::class, 'viewreservation']);
 
 // This is home controller
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/redirects', [HomeController::class, 'redirect']);
+
 
 
 Route::middleware([

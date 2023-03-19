@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -62,6 +63,22 @@ class AdminController extends Controller
         $delete_menu = Food::find($id);
         $delete_menu->delete();
         return redirect()->back();
+    }
+    public function reservation(Request $request){
+        $reservation_data = new Reservation;
+        $reservation_data->name = $request->name;
+        $reservation_data->email = $request->email;
+        $reservation_data->phone = $request->phone;
+        $reservation_data->guest = $request->guest;
+        $reservation_data->date = $request->date;
+        $reservation_data->time = $request->time;
+        $reservation_data->message = $request->message;
+        $reservation_data->save();
+        return redirect()->back();
+    }
+    public function viewreservation(){
+        $reservation_data = Reservation::all();
+        return view('admin.adminreservation', compact('reservation_data'));
     }
 
 }

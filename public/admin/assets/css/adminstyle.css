@@ -33,7 +33,7 @@
     width: 20rem;
 }
 .food_menu_table{
-    background: black;
+    background: gray;
 }
 .food_menu_table .food_menu_table_th{
     padding: 30px;
@@ -45,3 +45,20 @@
     height: 200px;
     width: 200px;
 }
+
+.reservation_div{
+    position: relative;
+    top: 70px;
+    right: -150px;
+}
+.reservation_div .reservation_table{
+    background-color: gray;
+    border: 1px;
+    width: 40rem;
+}
+.reservation_div .reservation_table .reservation_table_th{
+    padding: 30px;
+}
+
+
+

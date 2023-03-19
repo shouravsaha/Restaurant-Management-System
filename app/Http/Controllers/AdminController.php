@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Foodchef;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class AdminController extends Controller
 {
@@ -79,6 +81,20 @@ class AdminController extends Controller
     public function viewreservation(){
         $reservation_data = Reservation::all();
         return view('admin.adminreservation', compact('reservation_data'));
+    }
+    public function viewchef(){
+        return view('admin.adminchef');
+    }
+    public function uploadchef(Request $request){
+        $chefdata = new Foodchef;
+        $image = $request->image;
+        $image_name = time().'.'.$image->getClientOriginalExtension();
+        $request->image->move('chefimage', $image_name);
+        $chefdata->image = $image_name;
+        $chefdata->name = $request->name;
+        $chefdata->speciality = $request->speciality;
+        $chefdata->save();
+        return redirect()->back();
     }
 
 }

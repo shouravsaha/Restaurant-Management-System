@@ -1,5 +1,5 @@
 
-    <!-- ***** Reservation Us Area Starts ***** -->
+
     <section class="section" id="reservation">
         <div class="container">
             <div class="row">
@@ -84,4 +84,4 @@
             </div>
         </div>
     </section>
-    <!-- ***** Reservation Area Ends ***** -->
+

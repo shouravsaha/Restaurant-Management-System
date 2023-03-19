@@ -19,10 +19,18 @@
 .food_menu_div{
     position: relative;
     top: 60px;
-    right: -60px;
+    left: 10px;
+}
+.food_menu_div label{
+    width: 120px;
 }
 .food_menu_div .food_menu_input{
     color: blue;
+    width: 20rem;
+}
+.food_menu_div .button{
+    margin: 10px 0 10px 60px;
+    width: 20rem;
 }
 .food_menu_table{
     background: black;

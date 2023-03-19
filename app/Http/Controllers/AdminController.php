@@ -38,10 +38,30 @@ class AdminController extends Controller
         $food_data_table->save();
         return redirect()->back();
     }
-    // this function delete one by one food
-    public function delete_food_menu($id){
+    //
+    public function edit_food_menu($id){
+        $food_menu_data = Food::find($id);
+        return view('admin.updatefoodmenu', compact('food_menu_data'));
+    }
+    //
+    public function update_food(Request $request, $id){
+        $update_food_menu = Food::find($id);
+
+        $image = $request->image;
+        $image_name = time().'.'.$image->getClientOriginalExtension();
+        $request->image->move('foodimage', $image_name);
+        $update_food_menu->image = $image_name;
+        $update_food_menu->title = $request->title;
+        $update_food_menu->price = $request->price;
+        $update_food_menu->description = $request->description;
+        $update_food_menu->save();
+        return redirect()->back();
+    }
+     // this function delete one by one food
+     public function delete_food_menu($id){
         $delete_menu = Food::find($id);
         $delete_menu->delete();
         return redirect()->back();
     }
+
 }

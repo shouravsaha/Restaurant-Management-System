@@ -8,9 +8,9 @@
                 </div>
             </div>
         </div>
-        @foreach ($chefdata as $data)
         <div class="row">
-            <div class="col-lg-4">
+            @foreach ($chefdata as $data)
+            <div class="col-lg-4" style="margin-bottom: 30px;">
                 <div class="chef-item">
                     <div class="thumb">
                         <div class="overlay"></div>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
 </section>

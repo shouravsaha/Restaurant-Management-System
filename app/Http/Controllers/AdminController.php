@@ -16,6 +16,7 @@ class AdminController extends Controller
         $user_data = User::all();
         return view('admin.users', compact('user_data'));
     }
+
     // this function indicate each user deleteing system and
     // one users roll in admin this user not delete
     public function deleteUser($id){
@@ -23,11 +24,13 @@ class AdminController extends Controller
         $user_data->delete();
         return redirect()->back();
     }
+
     // food items fatch in db and view all food in food menu file
     public function foodmenu(){
         $food_menu_items = Food::all();
         return view('admin.foodmenu', compact('food_menu_items'));
     }
+
     // all food items store in db
     public function upload_food(Request $request){
         $food_data_table = new food;
@@ -41,11 +44,13 @@ class AdminController extends Controller
         $food_data_table->save();
         return redirect()->back();
     }
+
     //
     public function edit_food_menu($id){
         $food_menu_data = Food::find($id);
         return view('admin.updatefoodmenu', compact('food_menu_data'));
     }
+
     //
     public function update_food(Request $request, $id){
         $update_food_menu = Food::find($id);
@@ -60,12 +65,14 @@ class AdminController extends Controller
         $update_food_menu->save();
         return redirect()->back();
     }
+
      // this function delete one by one food
      public function delete_food_menu($id){
         $delete_menu = Food::find($id);
         $delete_menu->delete();
         return redirect()->back();
     }
+
     public function reservation(Request $request){
         $reservation_data = new Reservation;
         $reservation_data->name = $request->name;
@@ -78,14 +85,20 @@ class AdminController extends Controller
         $reservation_data->save();
         return redirect()->back();
     }
+
     public function viewreservation(){
         $reservation_data = Reservation::all();
         return view('admin.adminreservation', compact('reservation_data'));
     }
+
     public function viewchef(){
-        return view('admin.adminchef');
+        $chefdata = Foodchef::all();
+        return view('admin.adminchef', compact('chefdata'));
+
     }
+
     public function uploadchef(Request $request){
+
         $chefdata = new Foodchef;
         $image = $request->image;
         $image_name = time().'.'.$image->getClientOriginalExtension();
@@ -95,6 +108,7 @@ class AdminController extends Controller
         $chefdata->speciality = $request->speciality;
         $chefdata->save();
         return redirect()->back();
+
     }
 
 }

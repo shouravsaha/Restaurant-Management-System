@@ -64,5 +64,24 @@
     color: blue;
 }
 
+.chef_table{
+    background-color: black;
+    height: 0;
+}
+.chef_table_th{
+    padding: 30px;
+}
+
+.chef_table_td{
+    text-align: center;
+}
+
+.chef_table_img{
+    width: 200px;
+    height: 180px;
+}
+
+
+
 
 

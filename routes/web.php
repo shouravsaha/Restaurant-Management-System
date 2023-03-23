@@ -26,6 +26,10 @@ Route::post('/reservation', [AdminController::class, 'reservation']);
 Route::get('/viewreservation', [AdminController::class, 'viewreservation']);
 Route::get('/viewchef', [AdminController::class, 'viewchef']);
 Route::post('/uploadchef', [AdminController::class, 'uploadchef']);
+Route::get('/updatechef/{id}', [AdminController::class, 'updatechef']);
+Route::post('/updatefoodchef/{id}', [AdminController::class, 'updatefoodchef']);
+Route::get('/deletechef/{id}', [AdminController::class, 'deletechef']);
+
 
 // This is home controller
 Route::get('/', [HomeController::class, 'index']);

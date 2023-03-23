@@ -39,8 +39,8 @@
                 <td class="chef_table_td">{{ $data->name }}</td>
                 <td class="chef_table_td">{{ $data->speciality }}</td>
                 <td class="chef_table_td"><img class="chef_table_img" src="chefimage/{{ $data->image }}" alt=""></td>
-                <td><a href="{{ url('/', $data->id) }}" class="btn btn-primary mr-2 ml-2">Edit</a></td>
-                <td><a href="{{ url('/', $data->id) }}" class="btn btn-danger mr-2">Delete</a></td>
+                <td><a href="{{ url('/updatechef', $data->id) }}" class="btn btn-primary mr-2 ml-2">Edit</a></td>
+                <td><a href="{{ url('/deletechef', $data->id) }}" class="btn btn-danger mr-2">Delete</a></td>
             </tr>
             @endforeach
         </table>

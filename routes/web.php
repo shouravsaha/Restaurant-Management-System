@@ -36,6 +36,7 @@ Route::get('/deletechef/{id}', [AdminController::class, 'deletechef']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/redirects', [HomeController::class, 'redirect']);
 Route::post('/addcart/{id}', [HomeController::class, 'addcart']);
+Route::get('/showcart/{id}', [HomeController::class, 'showcart']);
 
 
 Route::middleware([

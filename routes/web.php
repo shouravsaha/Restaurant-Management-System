@@ -31,10 +31,12 @@ Route::post('/updatefoodchef/{id}', [AdminController::class, 'updatefoodchef']);
 Route::get('/deletechef/{id}', [AdminController::class, 'deletechef']);
 
 
+
 // This is home controller
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/redirects', [HomeController::class, 'redirect']);
-
+Route::post('/addcart/{id}', [HomeController::class, 'addcart']);
+Route::get('/showcart/{id}', [HomeController::class, 'showcart']);
 
 
 Route::middleware([

@@ -131,14 +131,21 @@ https://templatemo.com/tm-558-klassy-cafe
                 <th style="padding: 30px;">Food Name</th>
                 <th style="padding: 30px;">Price</th>
                 <th style="padding: 30px;">Quantity</th>
+                <th style="padding: 30px;">Action</th>
             </tr>
             @foreach ($cartdata as $data)
             <tr align="center">
                 <td>{{ $data->title }}</td>
                 <td>${{ $data->price }}</td>
                 <td>{{ $data->quantity }}</td>
+                {{-- <td><a href="$data->id" class="btn btn-danger">Remove</a></td> --}}
             </tr>
-            @endforeach
+            <tr style="position: relative; top: -35px; right: -380px;">
+                @endforeach
+                @foreach ($cartdata2 as $data2)
+                <td><a href="{{ url('/removecart', $data2->id) }}" class="btn btn-danger">Remove</a></td>
+                @endforeach
+            </tr>
         </table>
     </div>
 

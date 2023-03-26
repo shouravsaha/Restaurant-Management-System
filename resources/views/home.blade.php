@@ -57,7 +57,7 @@ https://templatemo.com/tm-558-klassy-cafe
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="{{ url('/') }}" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="#about">About</a></li>
 
                         <!--
@@ -90,7 +90,7 @@ https://templatemo.com/tm-558-klassy-cafe
                             </a>
                             @endauth
                             @guest
-                                Cart
+                                <li class="scroll-to-section"><a href="#reservation">Cart</a></li>
                             @endguest
                             </li>
                             <li>
